@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.pucrs</groupId>
+	<artifactId>gcs-maven</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>Automação de Build com Maven</name>
+	<description>
+		Projeto gráfico utilizando JavaFX, criado para exemplificar o uso da ferramenta Apache Maven em projetos Java.
+		Apresentado na cadeira de Gerenciamento de Configuração de Software da Escola Politécnica PUCRS.
+	</description>
+	<url>https://portal.pucrs.br/ensino-e-pesquisa/</url>
+	<inceptionYear>2024</inceptionYear>
+
+	<properties>
+		<javaVersion>21</javaVersion>
+		<maven.compiler.source>${javaVersion}</maven.compiler.source>
+		<maven.compiler.target>${javaVersion}</maven.compiler.target>
+		<maven.compiler.release>${javaVersion}</maven.compiler.release>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<javafx.version>23.0.1</javafx.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>${javafx.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>${javafx.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.11.3</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.4.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>br.pucrs.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.6.0</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.8</version>
+				<configuration>
+					<mainClass>br.pucrs.App</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<organization>
+		<name>Pontifícia Universidade Católica do Rio Grande do Sul</name>
+		<url>https://portal.pucrs.br/ensino-e-pesquisa/</url>
+	</organization>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/xLucaspx/gcs-maven/issues</url>
+	</issueManagement>
+
+	<scm>
+		<connection>scm:git:https://github.com/xLucaspx/gcs-maven.git</connection>
+		<developerConnection>scm:git:https://github.com/xLucaspx/gcs-maven.git</developerConnection>
+		<tag>main</tag>
+		<url>https://github.com/xLucaspx/gcs-maven</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>AugustoKnob</id>
+			<name>Augusto Sanhudo da Silva Knob</name>
+			<email>augusto.knob@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>CaetanoKich</id>
+			<name>Caetano Kich Taffe</name>
+			<email>c.taffe@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>DanFrantz</id>
+			<name>Daniel Paim Frantz</name>
+			<email>daniel.paim@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>GabrielArrudaPaim</id>
+			<name>Gabriel Arruda Paim</name>
+			<email>gabriel.paim002@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>DominguesGabriel</id>
+			<name>Gabriel Leão Domingues</name>
+			<email>gabriel.domingues002@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>gustavofid</id>
+			<name>Gustavo de Freitas Fidélis</name>
+			<email>gustavo.fidelis@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>LucaWBohnenberger</id>
+			<name>Luca Wolffenbüttel Bohnenberger</name>
+			<email>l.bohnenberger002@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>xLucaspx</id>
+			<name>Lucas da Paz Oliveira</name>
+			<email>lucas.paz02@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>Slongo11</id>
+			<name>Rodrigo Miotto Slongo</name>
+			<email>r.slongo@edu.pucrs.br</email>
+		</developer>
+		<developer>
+			<id>William-Olv-Kln</id>
+			<name>William de Oliveira Klein</name>
+			<email>w.klein@edu.pucrs.br</email>
+		</developer>
+	</developers>
+</project>
