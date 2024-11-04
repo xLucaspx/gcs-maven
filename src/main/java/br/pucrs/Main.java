@@ -1,9 +1,9 @@
 package br.pucrs;
 
-import views.Tela;
+import br.pucrs.views.App;
 
-public class App {
+public class Main {
 	public static void main(String... args) {
-		Tela.main(args);
+		App.main(args);
 	}
 }

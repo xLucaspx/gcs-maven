@@ -34,12 +34,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.openjfx</groupId>
-			<artifactId>javafx-fxml</artifactId>
-			<version>${javafx.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.11.3</version>
@@ -50,16 +44,11 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.4.2</version>
+				<groupId>org.openjfx</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>0.0.8</version>
 				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<mainClass>br.pucrs.App</mainClass>
-						</manifest>
-					</archive>
+					<mainClass>br.pucrs.Main</mainClass>
 				</configuration>
 			</plugin>
 
@@ -78,11 +67,16 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.openjfx</groupId>
-				<artifactId>javafx-maven-plugin</artifactId>
-				<version>0.0.8</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.4.2</version>
 				<configuration>
-					<mainClass>br.pucrs.App</mainClass>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>br.pucrs.Main</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -99,13 +93,17 @@
 	</issueManagement>
 
 	<scm>
-		<connection>scm:git:https://github.com/xLucaspx/gcs-maven.git</connection>
-		<developerConnection>scm:git:https://github.com/xLucaspx/gcs-maven.git</developerConnection>
+		<connection>
+			scm:git:https://github.com/xLucaspx/gcs-maven.git
+		</connection>
+		<developerConnection>
+			scm:git:https://github.com/xLucaspx/gcs-maven.git
+		</developerConnection>
 		<tag>main</tag>
 		<url>https://github.com/xLucaspx/gcs-maven</url>
 	</scm>
 
-	<developers>
+	<developers> <!-- em ordem alfabética -->
 		<developer>
 			<id>AugustoKnob</id>
 			<name>Augusto Sanhudo da Silva Knob</name>
